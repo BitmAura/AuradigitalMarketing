@@ -21,7 +21,7 @@ const PrivacyPage = () => {
             <div className={styles.section}>
               <h2>2. Cookies & AdSense Disclosure</h2>
               <p>We use cookies to improve your browsing experience. Google, as a third-party vendor, uses cookies to serve ads on our site. Google's use of advertising cookies enables it and its partners to serve ads to our users based on their visit to our sites and/or other sites on the Internet.</p>
-              <p>Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank">Ads Settings</a>.</p>
+              <p>Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">Ads Settings</a>.</p>
             </div>
 
             <div className={styles.section}>

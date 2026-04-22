@@ -61,7 +61,10 @@ const AuraAIScan = () => {
             <span>Aura AI is auditing {url}...</span>
           </div>
           <div className={styles.progressBar}>
-            <div className={styles.progressFill} style={{ width: `${progress}%` }}></div>
+            <div 
+              className={styles.progressFill} 
+              style={{ '--progress': `${progress}%` } as React.CSSProperties}
+            ></div>
           </div>
           <div className={styles.scanLogs}>
             {progress > 20 && <div>[INFO] Checking GMB API Status...</div>}

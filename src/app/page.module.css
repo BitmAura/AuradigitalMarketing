@@ -3,6 +3,20 @@
 }
 
 /* Hero Section */
+.hero,
+.services,
+.results,
+.aeoComparison,
+.faq,
+.newsletter,
+.stack,
+.blueprint,
+.about,
+.industries,
+.contact {
+  will-change: transform;
+}
+
 .hero {
   padding-top: 180px;
   padding-bottom: 120px;
@@ -390,6 +404,7 @@
   border: none;
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }

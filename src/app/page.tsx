@@ -13,7 +13,9 @@ import {
   Building2,
   Wallet,
   Store,
-  Rocket
+  Rocket,
+  MapPin,
+  UserCheck
 } from 'lucide-react';
 import AuraAIScan from '@/components/AuraAIScan';
 import GrowthCalculator from '@/components/GrowthCalculator';
@@ -86,34 +88,46 @@ const Home = () => {
       <section id="services" className={styles.services}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <div className={styles.badge}>Our Conversion Framework</div>
-            <h2>Full-Funnel Growth Systems</h2>
-            <p>We don't just provide services. We deploy autonomous systems that handle the entire customer journey from discovery to booking.</p>
+            <div className={styles.badge}>Our Growth Stack</div>
+            <h2>Autonomous Business Engines</h2>
+            <p>We don't just "market" your business. We build autonomous systems that generate revenue 24/7.</p>
           </div>
           <div className={styles.servicesGrid}>
             <ServiceCard 
-              title="AEO & GMB Domination"
-              description="Be the only answer on Google Search and Maps. We optimize for AI-driven search (AEO) to ensure high-intent customers find you first."
-              icon={Search}
-              features={["Answer Engine Optimization", "Hyper-Local GMB Domination", "Automated Review Acquisition"]}
-            />
-            <ServiceCard 
-              title="Agentic Automation"
-              description="Intelligent agents that handle lead qualification, scheduling, and follow-ups 24/7 without human intervention."
-              icon={MessageSquare}
-              features={["24/7 AI Receptionist", "Autonomous Appointment Booking", "CRM Lead Syncing"]}
-            />
-            <ServiceCard 
-              title="Performance Arbitrage"
-              description="Data-driven Meta and Google Ads that identify and exploit high-converting audience segments with surgical precision."
-              icon={BarChart3}
-              features={["High-Intent Keyword Mining", "Dynamic Creative Optimization", "Real-Time ROI Tracking"]}
-            />
-            <ServiceCard 
-              title="High-Value Funnels"
-              description="Premium landing experiences designed with conversion psychology at the core to maximize appointment volume."
+              title="Elite Web Building"
+              description="High-conversion websites and funnels built for extreme performance and results."
               icon={Layout}
-              features={["Psychology-Based Design", "Micro-Conversion Optimization", "Frictionless Booking Flow"]}
+              features={["Custom Next.js Apps", "High-Conversion UX", "Mobile-First Design"]}
+            />
+            <ServiceCard 
+              title="Google & Meta Ads"
+              description="Precision-targeted performance marketing with real-time lead tracking and optimization."
+              icon={Rocket}
+              features={["Search & Display Ads", "Meta (FB/IG) Lead Gen", "Conversion API Tracking"]}
+            />
+            <ServiceCard 
+              title="SEO & AEO Mastery"
+              description="Be the only answer on ChatGPT, Claude, and Google. We dominate the Answer Engines."
+              icon={Search}
+              features={["Answer Engine Optimization", "Global & Local SEO", "Authority Backlinks"]}
+            />
+            <ServiceCard 
+              title="GMB & Local SEO"
+              description="Own your local market and map rankings for just ₹15,000 per year."
+              icon={Rocket}
+              features={["Map Pack Domination", "Local Citations", "Review Management"]}
+            />
+            <ServiceCard 
+              title="AI Receptionist Agents"
+              description="Autonomous agents that handle leads, bookings, and customer support 24/7."
+              icon={MessageSquare}
+              features={["WhatsApp Booking Bots", "Website Voice/Chat Agents", "CRM Lead Syncing"]}
+            />
+            <ServiceCard 
+              title="Performance Tracking"
+              description="Full visibility into your ROI with advanced analytics and custom reporting."
+              icon={BarChart3}
+              features={["ROI Dashboards", "Call Tracking", "Lead Quality Audits"]}
             />
           </div>
         </div>

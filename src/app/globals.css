@@ -33,6 +33,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-outfit);
   scroll-behavior: smooth;
+  overscroll-behavior-y: none;
 }
 
 body {
