@@ -15,6 +15,7 @@ import {
   Store,
   Rocket
 } from 'lucide-react';
+import AuraAIScan from '@/components/AuraAIScan';
 import GrowthCalculator from '@/components/GrowthCalculator';
 import styles from './page.module.css';
 
@@ -28,21 +29,27 @@ const Home = () => {
         <div className="container">
           <div className={`${styles.heroContent} animate-fade-in`}>
             <div className={styles.badge}>AI-Powered Growth Strategies</div>
-            <h1>
-              We Help <span>Businesses & Entrepreneurs</span> Get More 
-              Leads & Revenue Using AI + Digital Marketing
-            </h1>
-            <p>
-              From Global SEO to AI Automation — we build high-performance systems 
-              that turn searchers into loyal customers for businesses of all sizes.
-            </p>
-            <div className={styles.heroActions}>
-              <a href="#contact" className={styles.primaryBtn}>
-                Get My Free Growth Strategy <ArrowRight size={20} />
-              </a>
-              <a href="#results" className={styles.secondaryBtn}>
-                Case Studies
-              </a>
+            <div className={styles.heroMain}>
+              <div className={styles.heroText}>
+                <h1>
+                  We Build <span>Autonomous Growth Engines</span> That Out-Compete, Out-Rank & Out-Scale
+                </h1>
+                <p>
+                  Stop wasting money on "random" marketing. We deploy advanced AI agents and conversion systems 
+                  that turn your business into a lead-generating machine.
+                </p>
+                <div className={styles.heroActions}>
+                  <a href="#contact" className={styles.primaryBtn}>
+                    Get My Free Growth Strategy <ArrowRight size={20} />
+                  </a>
+                  <a href="#results" className={styles.secondaryBtn}>
+                    Case Studies
+                  </a>
+                </div>
+              </div>
+              <div className={styles.heroInteractive}>
+                <AuraAIScan />
+              </div>
             </div>
 
             <div className={styles.trustBar}>
@@ -254,7 +261,7 @@ const Home = () => {
         <div className="container">
           <div className={styles.aboutContent}>
             <div className={styles.badge}>The Specialist</div>
-            <h2>Meet Dr. Pradeep Kumar</h2>
+            <h2>Meet D Pradeep Kumar</h2>
             <p>
               I'm an AI + Digital Growth Specialist who combines marketing psychology 
               with cutting-edge technology to help businesses of all sizes scale effectively.
@@ -361,7 +368,7 @@ const Home = () => {
             <div className={styles.footerLogo}>
               <img src="/logo.jpg" alt="AuraDigital Logo" className={styles.footerLogoImage} />
             </div>
-            <p>© 2024 AuraDigital Service. Built by Dr. Pradeep Kumar.</p>
+            <p>© 2024 AuraDigital Service. Built by D Pradeep Kumar.</p>
           </div>
         </div>
       </footer>
