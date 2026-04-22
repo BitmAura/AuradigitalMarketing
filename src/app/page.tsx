@@ -168,47 +168,32 @@ const Home = () => {
       {/* About Section */}
       <section id="about" className={styles.about}>
         <div className="container">
-          <div className={styles.aboutGrid}>
-            <div className={styles.aboutImage}>
-              <div className={styles.imageContainer}>
-                <img 
-                  src="/profile.png" 
-                  alt="Dr. Pradeep Kumar" 
-                  className={styles.profileImage}
-                />
-                <div className={styles.placeholderOverlay}>
-                  <p>Dr. Pradeep Kumar</p>
-                  <span>Founder, AuraDigital</span>
+          <div className={styles.aboutContent}>
+            <div className={styles.badge}>The Specialist</div>
+            <h2>Meet Dr. Pradeep Kumar</h2>
+            <p>
+              I'm an AI + Digital Growth Specialist who combines marketing psychology 
+              with cutting-edge technology to help businesses of all sizes scale effectively.
+            </p>
+            <div className={styles.aboutFeatures}>
+              <div className={styles.aboutFeature}>
+                <CheckCircle2 className={styles.checkIcon} />
+                <div>
+                  <h4>Hybrid Expertise</h4>
+                  <p>Marketing strategy + Technical AI implementation.</p>
+                </div>
+              </div>
+              <div className={styles.aboutFeature}>
+                <CheckCircle2 className={styles.checkIcon} />
+                <div>
+                  <h4>Proven Frameworks</h4>
+                  <p>Systems built for high-value service conversion.</p>
                 </div>
               </div>
             </div>
-            <div className={styles.aboutContent}>
-              <div className={styles.badge}>The Specialist</div>
-              <h2>Meet Dr. Pradeep Kumar</h2>
-              <p>
-                I'm not just another digital marketer. As an AI + Digital Growth Specialist, 
-                I combine marketing psychology with cutting-edge tech to help local businesses thrive.
-              </p>
-              <div className={styles.aboutFeatures}>
-                <div className={styles.aboutFeature}>
-                  <CheckCircle2 className={styles.checkIcon} />
-                  <div>
-                    <h4>Hybrid Expertise</h4>
-                    <p>Marketing strategy + Technical AI implementation.</p>
-                  </div>
-                </div>
-                <div className={styles.aboutFeature}>
-                  <CheckCircle2 className={styles.checkIcon} />
-                  <div>
-                    <h4>Industry Focused</h4>
-                    <p>Proven track record with dental clinics & finance firms.</p>
-                  </div>
-                </div>
-              </div>
-              <p className={styles.quote}>
-                "We don't just run ads or SEO. We build systems that bring you consistent leads."
-              </p>
-            </div>
+            <p className={styles.quote}>
+              "We don't just run ads or SEO. We build systems that bring you consistent leads."
+            </p>
           </div>
         </div>
       </section>
@@ -270,8 +255,8 @@ const Home = () => {
                 <input type="tel" placeholder="Your Phone Number" />
               </div>
               <div className={styles.formGroup}>
-                <label>Business Type</label>
-                <select>
+                <label htmlFor="business-type">Business Type</label>
+                <select id="business-type">
                   <option>Clinic / Medical</option>
                   <option>Finance</option>
                   <option>Salon / Bakery</option>
