@@ -117,3 +117,18 @@
   align-items: center;
   gap: 8px;
 }
+
+.adPlaceholder {
+  grid-column: 1 / -1;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}

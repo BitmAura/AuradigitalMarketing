@@ -192,6 +192,79 @@ const Home = () => {
         </div>
       </section>
 
+      {/* AEO vs SEO Comparison */}
+      <section className={styles.aeoComparison}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <div className={styles.badge}>The AEO Revolution</div>
+            <h2>Why Traditional SEO is Dead</h2>
+            <p>In the age of AI, being on page 1 isn't enough. You need to be the <strong>only</strong> answer provided by AI Search.</p>
+          </div>
+          <div className={styles.comparisonTable}>
+            <div className={styles.tableCol}>
+              <h3>Traditional Agencies</h3>
+              <ul>
+                <li>❌ Slow 6-12 month results</li>
+                <li>❌ High monthly retainers</li>
+                <li>❌ Focus on "clicks" not leads</li>
+                <li>❌ Outdated SEO techniques</li>
+              </ul>
+            </div>
+            <div className={styles.tableDivider}>VS</div>
+            <div className={`${styles.tableCol} ${styles.tableHighlight}`}>
+              <h3>AuraDigital (AEO)</h3>
+              <ul>
+                <li>✅ Hyper-fast AI indexing</li>
+                <li>✅ Low cost, high impact</li>
+                <li>✅ Guaranteed Answer Engine status</li>
+                <li>✅ Autonomous growth agents</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className={styles.faq}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <div className={styles.badge}>FAQ</div>
+            <h2>Common Questions</h2>
+            <p>Everything you need to know about scaling with Aura.</p>
+          </div>
+          <div className={styles.faqGrid}>
+            <div className={styles.faqItem}>
+              <h4>How can you be so much cheaper?</h4>
+              <p>We use autonomous agents to do the work that traditional agencies hire 10 people for. We pass those savings directly to you.</p>
+            </div>
+            <div className={styles.faqItem}>
+              <h4>Does the Aura AI Scan actually work?</h4>
+              <p>It's an interactive diagnostic tool that identifies the most critical leaks in your current digital presence, providing a roadmap for our full audit.</p>
+            </div>
+            <div className={styles.faqItem}>
+              <h4>What is AEO?</h4>
+              <p>Answer Engine Optimization ensures your business is the top-cited source for AI search engines like ChatGPT, Claude, and Perplexity.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter / Lead Magnet */}
+      <section className={styles.newsletter}>
+        <div className="container">
+          <div className={styles.newsletterCard}>
+            <div className={styles.newsletterText}>
+              <h3>Get the "AI Growth Blueprint"</h3>
+              <p>Join 500+ business owners receiving our weekly insights on AEO and autonomous growth.</p>
+            </div>
+            <form className={styles.newsletterForm}>
+              <input type="email" placeholder="Enter your email" required />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
       {/* Tech Stack Section */}
       <section className={styles.stack}>
         <div className="container">
@@ -215,6 +288,10 @@ const Home = () => {
             <div className={styles.stackItem}>
               <div className={styles.stackIcon}>LS</div>
               <span>Laudspeaker</span>
+            </div>
+            <div className={styles.stackItem}>
+              <div className={styles.stackIcon}>IF</div>
+              <span>iFalcon Agent</span>
             </div>
             <div className={styles.stackItem}>
               <div className={styles.stackIcon}>CD</div>

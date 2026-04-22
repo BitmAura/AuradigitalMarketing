@@ -266,6 +266,166 @@
   line-height: 1.5;
 }
 
+/* AEO Comparison */
+.aeoComparison {
+  padding: 120px 0;
+  background: rgba(99, 102, 241, 0.02);
+}
+
+.comparisonTable {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.tableCol {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 48px;
+  border-radius: 32px;
+  max-width: 450px;
+}
+
+.tableHighlight {
+  background: rgba(99, 102, 241, 0.05);
+  border-color: var(--primary);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.tableCol h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.tableCol ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tableCol li {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.tableDivider {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  opacity: 0.5;
+}
+
+/* FAQ Section */
+.faq {
+  padding: 120px 0;
+}
+
+.faqGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.faqItem {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faqItem h4 {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.faqItem p {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Newsletter Section */
+.newsletter {
+  padding: 120px 0;
+}
+
+.newsletterCard {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  padding: 60px;
+  border-radius: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+}
+
+.newsletterText h3 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.newsletterText p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+}
+
+.newsletterForm {
+  display: flex;
+  gap: 12px;
+  flex: 1;
+  max-width: 500px;
+}
+
+.newsletterForm input {
+  flex: 1;
+  padding: 16px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.newsletterForm input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.newsletterForm button {
+  padding: 0 32px;
+  border-radius: 12px;
+  border: none;
+  background: #fff;
+  color: var(--primary);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.newsletterForm button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1024px) {
+  .newsletterCard {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+  }
+  
+  .newsletterForm {
+    width: 100%;
+  }
+}
+
 /* Tech Stack Section */
 .stack {
   background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 70%);

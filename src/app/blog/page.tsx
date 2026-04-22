@@ -42,20 +42,27 @@ const BlogPage = () => {
 
           <div className={styles.blogGrid}>
             {posts.map((post, index) => (
-              <article key={index} className={styles.blogCard}>
-                <div className={styles.category}>{post.category}</div>
-                <div className={styles.cardContent}>
-                  <h3>{post.title}</h3>
-                  <p>{post.excerpt}</p>
-                  <div className={styles.meta}>
-                    <span><Calendar size={14} /> {post.date}</span>
-                    <span><User size={14} /> {post.author}</span>
+              <React.Fragment key={index}>
+                <article className={styles.blogCard}>
+                  <div className={styles.category}>{post.category}</div>
+                  <div className={styles.cardContent}>
+                    <h3>{post.title}</h3>
+                    <p>{post.excerpt}</p>
+                    <div className={styles.meta}>
+                      <span><Calendar size={14} /> {post.date}</span>
+                      <span><User size={14} /> {post.author}</span>
+                    </div>
+                    <a href="#" className={styles.readMore}>
+                      Read Article <ArrowRight size={16} />
+                    </a>
                   </div>
-                  <a href="#" className={styles.readMore}>
-                    Read Article <ArrowRight size={16} />
-                  </a>
-                </div>
-              </article>
+                </article>
+                {index === 0 && (
+                  <div className={styles.adPlaceholder}>
+                    <span>Advertisement - Google AdSense Placement</span>
+                  </div>
+                )}
+              </React.Fragment>
             ))}
           </div>
         </div>

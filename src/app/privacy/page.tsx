@@ -19,13 +19,19 @@ const PrivacyPage = () => {
             </div>
 
             <div className={styles.section}>
-              <h2>2. How We Use Your Information</h2>
-              <p>Your information is used to provide the services you request, communicate with you about your growth strategy, and improve our AI-driven marketing systems.</p>
+              <h2>2. Cookies & AdSense Disclosure</h2>
+              <p>We use cookies to improve your browsing experience. Google, as a third-party vendor, uses cookies to serve ads on our site. Google's use of advertising cookies enables it and its partners to serve ads to our users based on their visit to our sites and/or other sites on the Internet.</p>
+              <p>Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank">Ads Settings</a>.</p>
             </div>
 
             <div className={styles.section}>
-              <h2>3. Data Security</h2>
-              <p>We implement advanced security measures to protect your data. We do not sell your personal information to third parties.</p>
+              <h2>3. CCPA & GDPR Compliance</h2>
+              <p>We respect your data rights. You have the right to access, correct, or delete your personal data. We do not sell your personal information to third parties.</p>
+            </div>
+
+            <div className={styles.section}>
+              <h2>4. Data Security</h2>
+              <p>We implement advanced security measures to protect your data. All communication between your browser and our servers is encrypted via SSL.</p>
             </div>
 
             <div className={styles.section}>
