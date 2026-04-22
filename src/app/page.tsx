@@ -165,6 +165,38 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Tech Stack Section */}
+      <section className={styles.stack}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <div className={styles.badge}>The Crazy AI Stack</div>
+            <h2>Powered by Industry-Leading AI</h2>
+            <p>We leverage a proprietary stack of autonomous agents and automation tools to deliver 10X growth.</p>
+          </div>
+          <div className={styles.stackGrid}>
+            <div className={styles.stackItem}>
+              <div className={styles.stackIcon}>CR</div>
+              <span>CrewAI Agents</span>
+            </div>
+            <div className={styles.stackItem}>
+              <div className={styles.stackIcon}>TW</div>
+              <span>Twenty CRM</span>
+            </div>
+            <div className={styles.stackIconLarge}>
+              <img src="/logo.jpg" alt="Aura Logo" />
+            </div>
+            <div className={styles.stackItem}>
+              <div className={styles.stackIcon}>LS</div>
+              <span>Laudspeaker</span>
+            </div>
+            <div className={styles.stackItem}>
+              <div className={styles.stackIcon}>CD</div>
+              <span>Claude Code</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
       <section id="about" className={styles.about}>
         <div className="container">
