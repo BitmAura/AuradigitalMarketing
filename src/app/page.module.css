@@ -93,6 +93,41 @@
   border-color: rgba(255, 255, 255, 0.2);
 }
 
+.trustBar {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 0.8;
+}
+
+.trustBar span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.partnerGrid {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.partner {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.4);
+  transition: color 0.3s ease;
+}
+
+.partner:hover {
+  color: var(--primary);
+}
+
 .heroStats {
   display: flex;
   align-items: center;
@@ -293,6 +328,56 @@
 @keyframes pulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.05); }
+}
+
+/* Calculator Section */
+.calculatorSection {
+  background: rgba(99, 102, 241, 0.03);
+  padding: 120px 0;
+}
+
+/* Blueprint Section */
+.blueprint {
+  background: #05070a;
+  position: relative;
+}
+
+.blueprintGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.blueprintItem {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+.stepNumber {
+  font-size: 3rem;
+  font-weight: 800;
+  color: rgba(99, 102, 241, 0.1);
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.blueprintItem:hover .stepNumber {
+  color: rgba(99, 102, 241, 0.3);
+  transform: scale(1.1);
+}
+
+.blueprintItem h4 {
+  color: #fff;
+  font-size: 1.25rem;
+}
+
+.blueprintItem p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 /* About Section */

@@ -15,6 +15,7 @@ import {
   Store,
   Rocket
 } from 'lucide-react';
+import GrowthCalculator from '@/components/GrowthCalculator';
 import styles from './page.module.css';
 
 const Home = () => {
@@ -37,11 +38,21 @@ const Home = () => {
             </p>
             <div className={styles.heroActions}>
               <a href="#contact" className={styles.primaryBtn}>
-                Book Free Consultation <ArrowRight size={20} />
+                Get My Free Growth Strategy <ArrowRight size={20} />
               </a>
               <a href="#results" className={styles.secondaryBtn}>
-                View Our Results
+                Case Studies
               </a>
+            </div>
+
+            <div className={styles.trustBar}>
+              <span>Official Partners & Integrations</span>
+              <div className={styles.partnerGrid}>
+                <div className={styles.partner}>Google Ads</div>
+                <div className={styles.partner}>Meta Business</div>
+                <div className={styles.partner}>WhatsApp AI</div>
+                <div className={styles.partner}>Claude Agentic</div>
+              </div>
             </div>
             <div className={styles.heroStats}>
               <div className={styles.stat}>
@@ -67,35 +78,43 @@ const Home = () => {
       <section id="services" className={styles.services}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2>Our Core Growth Systems</h2>
-            <p>We don't just run ads. We build end-to-end revenue engines.</p>
+            <div className={styles.badge}>Our Conversion Framework</div>
+            <h2>Full-Funnel Growth Systems</h2>
+            <p>We don't just provide services. We deploy autonomous systems that handle the entire customer journey from discovery to booking.</p>
           </div>
           <div className={styles.servicesGrid}>
             <ServiceCard 
-              title="SEO & GMB Domination"
-              description="Dominate local search results and Google Maps to ensure customers find you first."
+              title="AEO & GMB Domination"
+              description="Be the only answer on Google Search and Maps. We optimize for AI-driven search (AEO) to ensure high-intent customers find you first."
               icon={Search}
-              features={["Local SEO Strategy", "Google Maps Ranking", "Review Management System"]}
+              features={["Answer Engine Optimization", "Hyper-Local GMB Domination", "Automated Review Acquisition"]}
             />
             <ServiceCard 
-              title="AI Automation"
-              description="Save hours of manual work with intelligent chatbots and automated booking systems."
+              title="Agentic Automation"
+              description="Intelligent agents that handle lead qualification, scheduling, and follow-ups 24/7 without human intervention."
               icon={MessageSquare}
-              features={["WhatsApp Chatbots", "AI Booking Systems", "Lead Follow-up Automation"]}
+              features={["24/7 AI Receptionist", "Autonomous Appointment Booking", "CRM Lead Syncing"]}
             />
             <ServiceCard 
-              title="Performance Marketing"
-              description="High-intent Google and Meta ads designed to generate qualified leads, not just clicks."
+              title="Performance Arbitrage"
+              description="Data-driven Meta and Google Ads that identify and exploit high-converting audience segments with surgical precision."
               icon={BarChart3}
-              features={["Google Search Ads", "Meta Lead Generation", "Conversion Tracking"]}
+              features={["High-Intent Keyword Mining", "Dynamic Creative Optimization", "Real-Time ROI Tracking"]}
             />
             <ServiceCard 
-              title="Websites & Funnels"
-              description="High-converting landing pages built to convert traffic into paying customers."
+              title="High-Value Funnels"
+              description="Premium landing experiences designed with conversion psychology at the core to maximize appointment volume."
               icon={Layout}
-              features={["Clinic Websites", "Sales Funnels", "Conversion Rate Optimization"]}
+              features={["Psychology-Based Design", "Micro-Conversion Optimization", "Frictionless Booking Flow"]}
             />
           </div>
+        </div>
+      </section>
+
+      {/* ROI Calculator Section */}
+      <section className={styles.calculatorSection}>
+        <div className="container">
+          <GrowthCalculator />
         </div>
       </section>
 
@@ -192,6 +211,39 @@ const Home = () => {
             <div className={styles.stackItem}>
               <div className={styles.stackIcon}>CD</div>
               <span>Claude Code</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Blueprint */}
+      <section className={styles.blueprint}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <div className={styles.badge}>The Aura Methodology</div>
+            <h2>How We Build Your Growth Engine</h2>
+            <p>Our systematic 4-step process ensures consistent, predictable scaling for your business.</p>
+          </div>
+          <div className={styles.blueprintGrid}>
+            <div className={styles.blueprintItem}>
+              <div className={styles.stepNumber}>01</div>
+              <h4>Discovery & Mapping</h4>
+              <p>We analyze your market and identify high-intent traffic sources your competitors are missing.</p>
+            </div>
+            <div className={styles.blueprintItem}>
+              <div className={styles.stepNumber}>02</div>
+              <h4>System Deployment</h4>
+              <p>We build your high-converting funnels and deploy autonomous AI agents to handle leads.</p>
+            </div>
+            <div className={styles.blueprintItem}>
+              <div className={styles.stepNumber}>03</div>
+              <h4>Traffic Injection</h4>
+              <p>We scale your visibility through hyper-targeted GMB domination and performance ads.</p>
+            </div>
+            <div className={styles.blueprintItem}>
+              <div className={styles.stepNumber}>04</div>
+              <h4>Optimization Loop</h4>
+              <p>Continuous AI-driven optimization of your conversion rates and lead quality for maximum ROI.</p>
             </div>
           </div>
         </div>

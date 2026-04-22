@@ -1,0 +1,158 @@
+.container {
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.header h3 {
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.header p {
+  color: var(--text-muted);
+}
+
+.calculatorGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.inputGroup label {
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.inputGroup input[type="range"] {
+  width: 100%;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.resultItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.resultItem span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.resultItem .value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.highlight .value {
+  color: var(--primary);
+  font-size: 2.2rem;
+}
+
+.badge {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  width: fit-content;
+  margin-top: 4px;
+}
+
+.potential {
+  margin-top: 10px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #10b981;
+}
+
+.potential strong {
+  font-size: 1.2rem;
+  display: block;
+}
+
+.potential span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.cta {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+@media (max-width: 768px) {
+  .calculatorGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .container {
+    padding: 30px 20px;
+  }
+}
