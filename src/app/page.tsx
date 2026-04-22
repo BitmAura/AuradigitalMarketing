@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import AuraAIScan from '@/components/AuraAIScan';
 import GrowthCalculator from '@/components/GrowthCalculator';
+import Footer from '@/components/Footer';
 import styles from './page.module.css';
 
 const Home = () => {
@@ -362,16 +363,7 @@ const Home = () => {
         </div>
       </section>
 
-      <footer className={styles.footer}>
-        <div className="container">
-          <div className={styles.footerContent}>
-            <div className={styles.footerLogo}>
-              <img src="/logo.jpg" alt="AuraDigital Logo" className={styles.footerLogoImage} />
-            </div>
-            <p>© 2024 AuraDigital Service. Built by D Pradeep Kumar.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 };

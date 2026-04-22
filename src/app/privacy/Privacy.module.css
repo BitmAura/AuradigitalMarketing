@@ -1,0 +1,41 @@
+.main {
+  min-height: 100vh;
+}
+
+.privacyHero {
+  padding-top: 180px;
+  padding-bottom: 120px;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.content h1 {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.updated {
+  color: var(--primary);
+  font-size: 0.9rem;
+  margin-bottom: 60px;
+}
+
+.section {
+  margin-bottom: 48px;
+}
+
+.section h2 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.section p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}

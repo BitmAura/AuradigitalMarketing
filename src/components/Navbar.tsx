@@ -25,10 +25,11 @@ const Navbar = () => {
         </Link>
 
         <div className={`${styles.links} ${isMenuOpen ? styles.menuOpen : ''}`}>
-          <Link href="#services" onClick={() => setIsMenuOpen(false)}>Services</Link>
-          <Link href="#about" onClick={() => setIsMenuOpen(false)}>About</Link>
-          <Link href="#results" onClick={() => setIsMenuOpen(false)}>Results</Link>
-          <Link href="#contact" className={styles.cta} onClick={() => setIsMenuOpen(false)}>Book a Call</Link>
+          <Link href="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
+          <Link href="/#services" onClick={() => setIsMenuOpen(false)}>Services</Link>
+          <Link href="/pricing" onClick={() => setIsMenuOpen(false)}>Pricing</Link>
+          <Link href="/blog" onClick={() => setIsMenuOpen(false)}>Blog</Link>
+          <Link href="/#contact" className={styles.cta} onClick={() => setIsMenuOpen(false)}>Book a Call</Link>
         </div>
 
         <button className={styles.mobileToggle} onClick={() => setIsMenuOpen(!isMenuOpen)}>

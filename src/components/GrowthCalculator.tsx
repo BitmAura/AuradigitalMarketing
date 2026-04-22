@@ -24,34 +24,40 @@ const GrowthCalculator = () => {
       <div className={styles.calculatorGrid}>
         <div className={styles.inputs}>
           <div className={styles.inputGroup}>
-            <label>Current Monthly Leads: {leads}</label>
+            <label htmlFor="leads-input">Current Monthly Leads: {leads}</label>
             <input 
+              id="leads-input"
               type="range" 
               min="5" 
               max="200" 
               value={leads} 
               onChange={(e) => setLeads(Number(e.target.value))} 
+              aria-label="Monthly Leads"
             />
           </div>
           <div className={styles.inputGroup}>
-            <label>Conversion Rate: {conversion}%</label>
+            <label htmlFor="conversion-input">Conversion Rate: {conversion}%</label>
             <input 
+              id="conversion-input"
               type="range" 
               min="1" 
               max="50" 
               value={conversion} 
               onChange={(e) => setConversion(Number(e.target.value))} 
+              aria-label="Conversion Rate"
             />
           </div>
           <div className={styles.inputGroup}>
-            <label>Avg. Customer Value: ${value}</label>
+            <label htmlFor="value-input">Avg. Customer Value: ${value}</label>
             <input 
+              id="value-input"
               type="range" 
               min="100" 
               max="5000" 
               step="100"
               value={value} 
               onChange={(e) => setValue(Number(e.target.value))} 
+              aria-label="Customer Value"
             />
           </div>
         </div>
