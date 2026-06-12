@@ -221,6 +221,192 @@ export default function RootLayout({
                     text: "Yes! We work with businesses across all of India and internationally. Our digital-first approach means we can deliver results for clients anywhere in the world.",
                   },
                 },
+                {
+                  "@type": "Question",
+                  name: "What is AEO (Answer Engine Optimization)?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Answer Engine Optimization (AEO) is the practice of optimizing your content to appear as direct answers in AI-powered search tools like Google AI Overview, Siri, Alexa, and voice search. AuraDigital provides AEO services to help businesses in Bangalore and India appear in these AI-generated answers.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "What is GEO (Generative Engine Optimization)?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Generative Engine Optimization (GEO) is optimizing your website and content to be cited and referenced by AI tools like ChatGPT, Google Gemini, Perplexity, and Bing Copilot when users ask questions in your industry. AuraDigital specializes in GEO to ensure your brand appears in AI-generated responses.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Which is the best digital marketing agency in Bangalore?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "AuraDigital Services is a top-rated digital marketing agency in Bangalore, founded by Pradeep Kumar with 6+ years of experience. We specialize in SEO, AEO, GEO, AI automation, Google Ads, and Meta Ads. Contact us at +91 91488 68413 or 2022auradigital@gmail.com.",
+                  },
+                },
+              ],
+            }),
+          }}
+        />
+        {/* AggregateRating Schema — Social Proof for Google/AI */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "AuraDigital Services",
+              image: "https://auradigitalservice.com/logo.jpg",
+              telephone: "+91-91488-68413",
+              email: "2022auradigital@gmail.com",
+              url: "https://auradigitalservice.com",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Bangalore",
+                addressRegion: "Karnataka",
+                addressCountry: "IN",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 12.9716,
+                longitude: 77.5946,
+              },
+              openingHoursSpecification: [
+                { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday"], opens: "09:00", closes: "19:00" },
+                { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "10:00", closes: "17:00" },
+              ],
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.9",
+                reviewCount: "50",
+                bestRating: "5",
+                worstRating: "1",
+              },
+              priceRange: "₹₹",
+              currenciesAccepted: "INR",
+              paymentAccepted: "Cash, Credit Card, Bank Transfer, UPI",
+              areaServed: [
+                { "@type": "City", name: "Bangalore" },
+                { "@type": "State", name: "Karnataka" },
+                { "@type": "Country", name: "India" },
+              ],
+              knowsAbout: [
+                "Digital Marketing", "SEO", "AEO", "GEO",
+                "AI Automation", "Google Ads", "Meta Ads",
+                "WhatsApp Marketing", "CRM Development", "SaaS Development",
+              ],
+              hasOfferCatalog: {
+                "@type": "OfferCatalog",
+                name: "Digital Marketing & AI Services",
+                itemListElement: [
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "SEO Services", description: "Search engine optimization for Google rankings" } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "AEO Services", description: "Answer engine optimization for AI search" } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "GEO Services", description: "Generative engine optimization for ChatGPT, Gemini" } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Automation", description: "Chatbots, CRM automation, workflow automation" } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Google Ads Management", description: "PPC campaign management" } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Meta Ads Management", description: "Facebook and Instagram advertising" } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Local SEO", description: "Google Maps and local search optimization" } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "SaaS Development", description: "Custom software and SaaS platforms" } },
+                ],
+              },
+            }),
+          }}
+        />
+        {/* Person Schema — Founder E-E-A-T Signal */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Pradeep Kumar",
+              jobTitle: "Founder & Digital Marketing Strategist",
+              worksFor: {
+                "@type": "Organization",
+                name: "AuraDigital Services",
+                url: "https://auradigitalservice.com",
+              },
+              url: "https://auradigitalservice.com/about",
+              image: "https://auradigitalservice.com/profile.png",
+              description: "Digital marketing expert with 6+ years of experience in SEO, AI automation, AEO, GEO, and business growth strategies. Founded AuraDigital Services to help businesses across all industries transform digitally.",
+              knowsAbout: [
+                "Digital Marketing", "SEO", "AEO", "GEO",
+                "AI Automation", "Business Growth Strategy",
+                "Google Ads", "Meta Ads", "CRM Development",
+              ],
+              alumniOf: "Digital Marketing Professional",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Bangalore",
+                addressCountry: "IN",
+              },
+            }),
+          }}
+        />
+        {/* Speakable Schema — Voice Search / AEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              name: "AuraDigital Services — Digital Marketing Agency Bangalore",
+              speakable: {
+                "@type": "SpeakableSpecification",
+                cssSelector: ["h1", "h2", ".speakable"],
+              },
+              url: "https://auradigitalservice.com",
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "What makes AuraDigital different from other digital marketing agencies?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "We combine AI-powered automation with traditional digital marketing to deliver measurable results. Our unique approach integrates custom AI solutions, data-driven strategies, and deep industry expertise across healthcare, finance, real estate, e-commerce, and technology.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "What digital marketing services do you offer in Bangalore?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "We offer SEO, Local SEO, GMB Optimization, Google Ads, Meta Ads, Social Media Marketing, Content Marketing, AI Chatbots, CRM Automation, Website Development, and SaaS Development.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "How long does it take to see results from digital marketing?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Most clients see measurable improvements within 30-60 days. SEO typically shows significant results in 3-6 months, while paid advertising campaigns generate leads within days.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "What is the cost of digital marketing services in Bangalore?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Our pricing starts at ₹15,000/year for local SEO packages. Monthly retainers start at ₹24,999/month for comprehensive digital marketing. Enterprise AI solutions are custom-quoted. Contact us for a free consultation.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Do you serve businesses outside Bangalore?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Yes! We work with businesses across all of India and internationally. Our digital-first approach means we can deliver results for clients anywhere in the world.",
+                  },
+                },
               ],
             }),
           }}
