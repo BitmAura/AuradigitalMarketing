@@ -1,458 +1,497 @@
-import React from 'react';
-import Navbar from '@/components/Navbar';
-import ServiceCard from '@/components/ServiceCard';
-import { 
-  Search, 
-  MessageSquare, 
-  BarChart3, 
-  Layout, 
-  ArrowRight, 
-  CheckCircle2, 
-  Phone,
+"use client";
+
+import React from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  CheckCircle2,
+  TrendingUp,
+  Users,
+  Globe,
+  BarChart3,
+  Search,
+  MapPin,
+  MessageSquare,
+  FileText,
+  CreditCard,
+  Video,
+  Mail,
   Stethoscope,
   Building2,
-  Wallet,
+  Layout,
   Store,
-  Rocket,
-  MapPin,
-  UserCheck
-} from 'lucide-react';
-import AuraAIScan from '@/components/AuraAIScan';
-import GrowthCalculator from '@/components/GrowthCalculator';
-import Footer from '@/components/Footer';
-import styles from './page.module.css';
+  Calendar,
+  Shield,
+  Database,
+  Workflow,
+  Target,
+  Volume2,
+  Cpu,
+  Heart,
+  Package,
+  Cloud,
+  Sparkles,
+  ArrowUpRight,
+  Star,
+  Play,
+  ChevronRight,
+} from "lucide-react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import FAQSection from "@/components/FAQSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
+
+const fadeInUp: Record<string, any> = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, delay: i * 0.1, ease: "easeOut" },
+  }),
+};
+
+const staggerContainer: Record<string, any> = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 },
+  },
+};
+
+const services = [
+  {
+    category: "Digital Marketing",
+    icon: TrendingUp,
+    items: [
+      { icon: Search, label: "Search Engine Optimization (SEO)" },
+      { icon: MapPin, label: "Local SEO & GMB Optimization" },
+      { icon: TrendingUp, label: "Generative Engine Optimization (GEO)" },
+      { icon: MessageSquare, label: "Answer Engine Optimization (AEO)" },
+      { icon: Users, label: "Social Media Marketing" },
+      { icon: FileText, label: "Content Marketing" },
+      { icon: BarChart3, label: "Performance Marketing" },
+      { icon: CreditCard, label: "Meta & Google Ads Management" },
+      { icon: Video, label: "YouTube Marketing" },
+      { icon: Mail, label: "Email & WhatsApp Marketing" },
+    ],
+  },
+  {
+    category: "Website Development",
+    icon: Globe,
+    items: [
+      { icon: Stethoscope, label: "Healthcare Websites" },
+      { icon: Building2, label: "Corporate Websites" },
+      { icon: Layout, label: "Landing Pages" },
+      { icon: Store, label: "E-commerce Websites" },
+      { icon: Calendar, label: "Appointment Booking Systems" },
+      { icon: Shield, label: "Website Maintenance" },
+    ],
+  },
+  {
+    category: "AI & Automation",
+    icon: Cpu,
+    items: [
+      { icon: MessageSquare, label: "AI Chatbots & Voice Agents" },
+      { icon: Users, label: "AI Lead Generation Systems" },
+      { icon: Database, label: "CRM Automation" },
+      { icon: Workflow, label: "Workflow Automation" },
+      { icon: Target, label: "Marketing Automation" },
+      { icon: Cpu, label: "Custom AI Solutions" },
+    ],
+  },
+  {
+    category: "Software & SaaS",
+    icon: Cloud,
+    items: [
+      { icon: Database, label: "Custom CRM Development" },
+      { icon: Users, label: "Employee Management Systems" },
+      { icon: Calendar, label: "Appointment Management" },
+      { icon: Heart, label: "Clinic Management Software" },
+      { icon: Package, label: "Inventory Management" },
+      { icon: Cloud, label: "Custom SaaS Platforms" },
+    ],
+  },
+];
+
+const stats = [
+  { value: "300%", label: "Avg. Lead Growth", icon: TrendingUp },
+  { value: "Top 3", label: "Google Ranking Achieved", icon: Globe },
+  { value: "50K+", label: "Qualified Leads Generated", icon: Users },
+  { value: "200%", label: "Website Traffic Growth", icon: BarChart3 },
+];
+
+const partners = [
+  "Healthcare", "Finance", "Real Estate", "E-commerce",
+  "Technology", "Education", "Professional Services",
+];
 
 const Home = () => {
   return (
-    <main className={styles.main}>
+    <main className="min-h-screen bg-white dark:bg-aura-950">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className={styles.hero}>
-        <div className="container">
-          <div className={`${styles.heroContent} animate-fade-in`}>
-            <div className={styles.badge}>AI-Powered Growth Strategies</div>
-            <div className={styles.heroMain}>
-              <div className={styles.heroText}>
-                <h1>
-                  We Build <span>Autonomous Growth Engines</span> That Out-Compete, Out-Rank & Out-Scale
-                </h1>
-                <p>
-                  Stop wasting money on "random" marketing. We deploy advanced AI agents and conversion systems 
-                  that turn your business into a lead-generating machine.
-                </p>
-                <div className={styles.heroActions}>
-                  <a href="#contact" className={styles.primaryBtn}>
-                    Get My Free Growth Strategy <ArrowRight size={20} />
-                  </a>
-                  <a href="#results" className={styles.secondaryBtn}>
-                    Case Studies
-                  </a>
+      {/* ============ HERO SECTION ============ */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-aura-50 dark:from-aura-950 dark:via-aura-900 dark:to-black">
+        {/* Animated background */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-aura-500/10 dark:bg-aura-500/5 blur-3xl animate-float" />
+          <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-indigo-500/10 dark:bg-indigo-500/5 blur-3xl animate-float" style={{ animationDelay: "-3s" }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-dots opacity-40 dark:opacity-20" />
+          {/* Grid overlay */}
+          <div className="absolute inset-0 bg-grid opacity-[0.03] dark:opacity-[0.05]" />
+        </div>
+
+        <div className="container-main relative z-10 pt-32 pb-20 lg:pt-40 lg:pb-28">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Left Content */}
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={staggerContainer}
+              className="max-w-xl"
+            >
+              <motion.div
+                variants={fadeInUp}
+                className="inline-flex items-center gap-2 rounded-full border border-aura-200 dark:border-aura-800 bg-white dark:bg-aura-900/50 px-4 py-1.5 mb-6 shadow-sm"
+              >
+                <Sparkles size={14} className="text-aura-500" />
+                <span className="text-xs font-semibold uppercase tracking-wider text-aura-600 dark:text-aura-400">
+                  AI-Powered Growth Solutions
+                </span>
+              </motion.div>
+
+              <motion.h1
+                variants={fadeInUp}
+                className="text-display-lg sm:text-display-xl lg:text-display-2xl font-bold text-slate-900 dark:text-white mb-6 leading-[1.05]"
+              >
+                Transforming Businesses Through{" "}
+                <span className="gradient-text">Digital Marketing, AI & Automation</span>
+              </motion.h1>
+
+              <motion.p
+                variants={fadeInUp}
+                className="text-lg sm:text-xl text-slate-500 dark:text-slate-400 mb-8 leading-relaxed max-w-lg"
+              >
+                We help businesses attract more customers, automate operations, and scale efficiently with data-driven marketing and intelligent digital solutions.
+              </motion.p>
+
+              <motion.div
+                variants={fadeInUp}
+                className="flex flex-col sm:flex-row gap-3"
+              >
+                <Link
+                  href="/contact"
+                  className="btn-primary text-base px-8 py-4 group"
+                >
+                  Book Free Consultation
+                  <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+                <Link
+                  href="/services"
+                  className="btn-secondary text-base px-8 py-4"
+                >
+                  View Services
+                </Link>
+              </motion.div>
+
+              {/* Trust Indicators */}
+              <motion.div
+                variants={fadeInUp}
+                className="mt-12 flex flex-wrap gap-6"
+              >
+                {[
+                  { icon: Globe, text: "Multi-Industry Expertise" },
+                  { icon: Sparkles, text: "AI-Powered Growth Solutions" },
+                  { icon: Globe, text: "End-to-End Digital Transformation" },
+                ].map((item) => (
+                  <div key={item.text} className="flex items-center gap-2.5">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-aura-50 dark:bg-aura-900/50">
+                      <item.icon size={15} className="text-aura-500" />
+                    </div>
+                    <span className="text-sm font-medium text-slate-600 dark:text-slate-400">
+                      {item.text}
+                    </span>
+                  </div>
+                ))}
+              </motion.div>
+            </motion.div>
+
+            {/* Right Visual */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="hidden lg:block relative"
+            >
+              {/* Stats Cards */}
+              <div className="grid grid-cols-2 gap-4">
+                {stats.map((stat, i) => (
+                  <motion.div
+                    key={stat.label}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
+                    className="card-premium p-5"
+                  >
+                    <stat.icon className="text-aura-500 mb-2" size={20} />
+                    <p className="text-2xl font-bold text-slate-900 dark:text-white">{stat.value}</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{stat.label}</p>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Floating badge */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 1 }}
+                className="absolute -left-8 -bottom-4 flex items-center gap-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl p-4"
+              >
+                <div className="flex -space-x-2">
+                  {["SJ", "MC", "PS"].map((init) => (
+                    <div
+                      key={init}
+                      className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-white dark:border-slate-900 bg-gradient-to-br from-aura-500 to-indigo-500 text-[10px] font-bold text-white"
+                    >
+                      {init}
+                    </div>
+                  ))}
                 </div>
-              </div>
-              <div className={styles.heroInteractive}>
-                <AuraAIScan />
-              </div>
-            </div>
-
-            <div className={styles.trustBar}>
-              <span>Official Partners & Integrations</span>
-              <div className={styles.partnerGrid}>
-                <div className={styles.partner}>Google Ads</div>
-                <div className={styles.partner}>Meta Business</div>
-                <div className={styles.partner}>WhatsApp AI</div>
-                <div className={styles.partner}>Claude Agentic</div>
-              </div>
-            </div>
-            <div className={styles.heroStats}>
-              <div className={styles.stat}>
-                <strong>40+</strong>
-                <span>Leads/Month Avg.</span>
-              </div>
-              <div className={styles.statDivider}></div>
-              <div className={styles.stat}>
-                <strong>10X</strong>
-                <span>ROI for Clients</span>
-              </div>
-              <div className={styles.statDivider}></div>
-              <div className={styles.stat}>
-                <strong>24/7</strong>
-                <span>AI Automation</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section id="services" className={styles.services}>
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <div className={styles.badge}>Our Growth Stack</div>
-            <h2>Autonomous Business Engines</h2>
-            <p>We don't just "market" your business. We build autonomous systems that generate revenue 24/7.</p>
-          </div>
-          <div className={styles.servicesGrid}>
-            <ServiceCard 
-              title="Elite Web Building"
-              description="High-conversion websites and funnels built for extreme performance and results."
-              icon={Layout}
-              features={["Custom Next.js Apps", "High-Conversion UX", "Mobile-First Design"]}
-            />
-            <ServiceCard 
-              title="Google & Meta Ads"
-              description="Precision-targeted performance marketing with real-time lead tracking and optimization."
-              icon={Rocket}
-              features={["Search & Display Ads", "Meta (FB/IG) Lead Gen", "Conversion API Tracking"]}
-            />
-            <ServiceCard 
-              title="SEO & AEO Mastery"
-              description="Be the only answer on ChatGPT, Claude, and Google. We dominate the Answer Engines."
-              icon={Search}
-              features={["Answer Engine Optimization", "Global & Local SEO", "Authority Backlinks"]}
-            />
-            <ServiceCard 
-              title="GMB & Local SEO"
-              description="Own your local market and map rankings for just ₹15,000 per year."
-              icon={Rocket}
-              features={["Map Pack Domination", "Local Citations", "Review Management"]}
-            />
-            <ServiceCard 
-              title="AI Receptionist Agents"
-              description="Autonomous agents that handle leads, bookings, and customer support 24/7."
-              icon={MessageSquare}
-              features={["WhatsApp Booking Bots", "Website Voice/Chat Agents", "CRM Lead Syncing"]}
-            />
-            <ServiceCard 
-              title="Performance Tracking"
-              description="Full visibility into your ROI with advanced analytics and custom reporting."
-              icon={BarChart3}
-              features={["ROI Dashboards", "Call Tracking", "Lead Quality Audits"]}
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* ROI Calculator Section */}
-      <section className={styles.calculatorSection}>
-        <div className="container">
-          <GrowthCalculator />
-        </div>
-      </section>
-
-      {/* Results Section */}
-      <section id="results" className={styles.results}>
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <div className={styles.badge}>Proven Results</div>
-            <h2>Real Growth for Real Businesses</h2>
-            <p>We don't just promise growth; we deliver measurable ROI through our AI-integrated systems.</p>
-          </div>
-          <div className={styles.resultsGrid}>
-            <div className={`glass-card ${styles.resultCard}`}>
-              <div className={styles.resultHeader}>
-                <Building2 className={styles.resultIcon} />
-                <h3>Dental Clinic Scale</h3>
-              </div>
-              <div className={styles.resultStats}>
-                <div className={styles.resultStat}>
-                  <span className={styles.statLabel}>Monthly Calls</span>
-                  <span className={styles.statValue}>40+</span>
+                <div>
+                  <div className="flex gap-0.5">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} size={12} className="fill-amber-400 text-amber-400" />
+                    ))}
+                  </div>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                    Trusted by 100+ businesses
+                  </p>
                 </div>
-                <div className={styles.resultStat}>
-                  <span className={styles.statLabel}>Search Rank</span>
-                  <span className={styles.statValue}>Top 3</span>
-                </div>
-              </div>
-              <p>Achieved GMB domination and SEO ranking, resulting in a consistent flow of high-value patients.</p>
-            </div>
-
-            <div className={`glass-card ${styles.resultCard}`}>
-              <div className={styles.resultHeader}>
-                <Wallet className={styles.resultIcon} />
-                <h3>Finance Company</h3>
-              </div>
-              <div className={styles.resultStats}>
-                <div className={styles.resultStat}>
-                  <span className={styles.statLabel}>Lead Quality</span>
-                  <span className={styles.statValue}>92%</span>
-                </div>
-                <div className={styles.resultStat}>
-                  <span className={styles.statLabel}>Cost/Lead</span>
-                  <span className={styles.statValue}>-35%</span>
-                </div>
-              </div>
-              <p>Implemented a Meta Ads lead generation funnel that delivered highly qualified investment leads.</p>
-            </div>
-            
-            <div className={`glass-card ${styles.resultCard}`}>
-              <div className={styles.resultHeader}>
-                <MessageSquare className={styles.resultIcon} />
-                <h3>AI Automation Success</h3>
-              </div>
-              <div className={styles.resultStats}>
-                <div className={styles.resultStat}>
-                  <span className={styles.statLabel}>Booking Time</span>
-                  <span className={styles.statValue}>-80%</span>
-                </div>
-                <div className={styles.resultStat}>
-                  <span className={styles.statLabel}>Availability</span>
-                  <span className={styles.statValue}>24/7</span>
-                </div>
-              </div>
-              <p>Built a WhatsApp booking bot that handles 80% of appointment scheduling without human intervention.</p>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* AEO vs SEO Comparison */}
-      <section className={styles.aeoComparison}>
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <div className={styles.badge}>The AEO Revolution</div>
-            <h2>Why Traditional SEO is Dead</h2>
-            <p>In the age of AI, being on page 1 isn't enough. You need to be the <strong>only</strong> answer provided by AI Search.</p>
-          </div>
-          <div className={styles.comparisonTable}>
-            <div className={styles.tableCol}>
-              <h3>Traditional Agencies</h3>
-              <ul>
-                <li>❌ Slow 6-12 month results</li>
-                <li>❌ High monthly retainers</li>
-                <li>❌ Focus on "clicks" not leads</li>
-                <li>❌ Outdated SEO techniques</li>
-              </ul>
-            </div>
-            <div className={styles.tableDivider}>VS</div>
-            <div className={`${styles.tableCol} ${styles.tableHighlight}`}>
-              <h3>AuraDigital (AEO)</h3>
-              <ul>
-                <li>✅ Hyper-fast AI indexing</li>
-                <li>✅ Low cost, high impact</li>
-                <li>✅ Guaranteed Answer Engine status</li>
-                <li>✅ Autonomous growth agents</li>
-              </ul>
-            </div>
+      {/* ============ PARTNER INDUSTRIES ============ */}
+      <section className="py-12 border-y border-slate-100 dark:border-slate-800 bg-white dark:bg-aura-950">
+        <div className="container-main">
+          <p className="text-center text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-6">
+            Trusted by Businesses Across Industries
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+            {partners.map((industry) => (
+              <span
+                key={industry}
+                className="text-sm font-semibold text-slate-300 dark:text-slate-600 hover:text-aura-500 dark:hover:text-aura-400 transition-colors"
+              >
+                {industry}
+              </span>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className={styles.faq}>
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <div className={styles.badge}>FAQ</div>
-            <h2>Common Questions</h2>
-            <p>Everything you need to know about scaling with Aura.</p>
-          </div>
-          <div className={styles.faqGrid}>
-            <div className={styles.faqItem}>
-              <h4>How can you be so much cheaper?</h4>
-              <p>We use autonomous agents to do the work that traditional agencies hire 10 people for. We pass those savings directly to you.</p>
-            </div>
-            <div className={styles.faqItem}>
-              <h4>Does the Aura AI Scan actually work?</h4>
-              <p>It's an interactive diagnostic tool that identifies the most critical leaks in your current digital presence, providing a roadmap for our full audit.</p>
-            </div>
-            <div className={styles.faqItem}>
-              <h4>What is AEO?</h4>
-              <p>Answer Engine Optimization ensures your business is the top-cited source for AI search engines like ChatGPT, Claude, and Perplexity.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Newsletter / Lead Magnet */}
-      <section className={styles.newsletter}>
-        <div className="container">
-          <div className={styles.newsletterCard}>
-            <div className={styles.newsletterText}>
-              <h3>Get the "AI Growth Blueprint"</h3>
-              <p>Join 500+ business owners receiving our weekly insights on AEO and autonomous growth.</p>
-            </div>
-            <form className={styles.newsletterForm}>
-              <input type="email" placeholder="Enter your email" required />
-              <button type="submit">Subscribe</button>
-            </form>
-          </div>
-        </div>
-      </section>
-
-      {/* Tech Stack Section */}
-      <section className={styles.stack}>
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <div className={styles.badge}>The Crazy AI Stack</div>
-            <h2>Powered by Industry-Leading AI</h2>
-            <p>We leverage a proprietary stack of autonomous agents and automation tools to deliver 10X growth.</p>
-          </div>
-          <div className={styles.stackGrid}>
-            <div className={styles.stackItem}>
-              <div className={styles.stackIcon}>CR</div>
-              <span>CrewAI Agents</span>
-            </div>
-            <div className={styles.stackItem}>
-              <div className={styles.stackIcon}>TW</div>
-              <span>Twenty CRM</span>
-            </div>
-            <div className={styles.stackIconLarge}>
-              <img src="/logo.jpg" alt="Aura Logo" />
-            </div>
-            <div className={styles.stackItem}>
-              <div className={styles.stackIcon}>LS</div>
-              <span>Laudspeaker</span>
-            </div>
-            <div className={styles.stackItem}>
-              <div className={styles.stackIcon}>IF</div>
-              <span>iFalcon Agent</span>
-            </div>
-            <div className={styles.stackItem}>
-              <div className={styles.stackIcon}>CD</div>
-              <span>Claude Code</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Service Blueprint */}
-      <section className={styles.blueprint}>
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <div className={styles.badge}>The Aura Methodology</div>
-            <h2>How We Build Your Growth Engine</h2>
-            <p>Our systematic 4-step process ensures consistent, predictable scaling for your business.</p>
-          </div>
-          <div className={styles.blueprintGrid}>
-            <div className={styles.blueprintItem}>
-              <div className={styles.stepNumber}>01</div>
-              <h4>Discovery & Mapping</h4>
-              <p>We analyze your market and identify high-intent traffic sources your competitors are missing.</p>
-            </div>
-            <div className={styles.blueprintItem}>
-              <div className={styles.stepNumber}>02</div>
-              <h4>System Deployment</h4>
-              <p>We build your high-converting funnels and deploy autonomous AI agents to handle leads.</p>
-            </div>
-            <div className={styles.blueprintItem}>
-              <div className={styles.stepNumber}>03</div>
-              <h4>Traffic Injection</h4>
-              <p>We scale your visibility through hyper-targeted GMB domination and performance ads.</p>
-            </div>
-            <div className={styles.blueprintItem}>
-              <div className={styles.stepNumber}>04</div>
-              <h4>Optimization Loop</h4>
-              <p>Continuous AI-driven optimization of your conversion rates and lead quality for maximum ROI.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className={styles.about}>
-        <div className="container">
-          <div className={styles.aboutContent}>
-            <div className={styles.badge}>The Specialist</div>
-            <h2>Meet D Pradeep Kumar</h2>
+      {/* ============ SERVICES OVERVIEW ============ */}
+      <section className="section-padding bg-white dark:bg-aura-950">
+        <div className="container-main">
+          <div className="section-header">
+            <div className="badge mb-4">Our Services</div>
+            <h2>Comprehensive Digital Marketing & AI Solutions</h2>
             <p>
-              I'm an AI + Digital Growth Specialist who combines marketing psychology 
-              with cutting-edge technology to help businesses of all sizes scale effectively.
+              End-to-end digital transformation services designed to accelerate your business growth.
             </p>
-            <div className={styles.aboutFeatures}>
-              <div className={styles.aboutFeature}>
-                <CheckCircle2 className={styles.checkIcon} />
-                <div>
-                  <h4>Hybrid Expertise</h4>
-                  <p>Marketing strategy + Technical AI implementation.</p>
+          </div>
+
+          <div className="space-y-16">
+            {services.map((category, catIndex) => (
+              <motion.div
+                key={category.category}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                variants={staggerContainer}
+              >
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-aura-500 to-indigo-500 shadow-lg shadow-aura-500/20">
+                    <category.icon size={20} className="text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+                    {category.category}
+                  </h3>
                 </div>
-              </div>
-              <div className={styles.aboutFeature}>
-                <CheckCircle2 className={styles.checkIcon} />
-                <div>
-                  <h4>Proven Frameworks</h4>
-                  <p>Systems built for high-value service conversion.</p>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+                  {category.items.map((item, i) => (
+                    <motion.div
+                      key={item.label}
+                      variants={fadeInUp}
+                      custom={i}
+                      className="group flex items-center gap-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-3.5 hover:border-aura-200 dark:hover:border-aura-700 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                    >
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-aura-50 dark:bg-aura-900/50 group-hover:bg-aura-100 dark:group-hover:bg-aura-900 transition-colors">
+                        <item.icon size={16} className="text-aura-500" />
+                      </div>
+                      <span className="text-sm font-medium text-slate-700 dark:text-slate-300 group-hover:text-aura-600 dark:group-hover:text-aura-400 transition-colors">
+                        {item.label}
+                      </span>
+                    </motion.div>
+                  ))}
                 </div>
-              </div>
-            </div>
-            <p className={styles.quote}>
-              "We don't just run ads or SEO. We build systems that bring you consistent leads."
-            </p>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="mt-12 text-center"
+          >
+            <Link
+              href="/services"
+              className="btn-secondary text-base px-8 py-4 group"
+            >
+              View All Services in Detail
+              <ChevronRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ============ WHY AURADIGITAL ============ */}
+      <section className="section-padding bg-slate-50 dark:bg-aura-950/50 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-1/4 w-64 h-64 bg-aura-500/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-indigo-500/5 rounded-full blur-3xl" />
+        </div>
+
+        <div className="container-main relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+            >
+              <motion.div variants={fadeInUp} className="badge mb-4">
+                Why AuraDigital
+              </motion.div>
+              <motion.h2 variants={fadeInUp} className="text-display-sm sm:text-display-md lg:text-display-lg font-bold text-slate-900 dark:text-white mb-6">
+                AI-Powered Growth Engine for Your Business
+              </motion.h2>
+              <motion.p variants={fadeInUp} className="text-lg text-slate-500 dark:text-slate-400 mb-8 leading-relaxed">
+                We don&apos;t just market your business — we build intelligent systems that automate growth, optimize conversions, and deliver measurable results.
+              </motion.p>
+              <motion.div variants={fadeInUp} className="space-y-4">
+                {[
+                  "Custom AI solutions tailored to your industry",
+                  "Data-driven strategies with transparent reporting",
+                  "End-to-end digital transformation expertise",
+                  "Multi-industry expertise across sectors",
+                  "Proven track record with 300%+ average ROI",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3">
+                    <CheckCircle2 size={18} className="text-emerald-500 mt-0.5 shrink-0" />
+                    <span className="text-sm text-slate-600 dark:text-slate-300">{item}</span>
+                  </div>
+                ))}
+              </motion.div>
+              <motion.div variants={fadeInUp} className="mt-8">
+                <Link href="/about" className="btn-primary text-base px-8 py-4 group">
+                  Learn More About Us
+                  <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </motion.div>
+            </motion.div>
+
+            {/* Stats Grid */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+              className="grid grid-cols-2 gap-4"
+            >
+              {[
+                { value: "50+", label: "Clients Served", desc: "Across 7+ industries" },
+                { value: "5+", label: "Years Experience", desc: "Digital transformation" },
+                { value: "95%", label: "Client Retention", desc: "Satisfied clients stay" },
+                { value: "24/7", label: "Support Available", desc: "Round-the-clock" },
+              ].map((stat, i) => (
+                <motion.div
+                  key={stat.label}
+                  variants={fadeInUp}
+                  custom={i}
+                  className="card-premium p-6 text-center"
+                >
+                  <p className="text-3xl font-bold gradient-text mb-1">{stat.value}</p>
+                  <p className="text-sm font-semibold text-slate-900 dark:text-white">{stat.label}</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{stat.desc}</p>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Industries Section */}
-      <section className={styles.industries}>
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <h2>Industries We Scale</h2>
-            <p>Specialized solutions for high-value service businesses.</p>
-          </div>
-          <div className={styles.industriesGrid}>
-            <div className={styles.industryItem}>
-              <Stethoscope size={40} />
-              <span>Medical Clinics</span>
-            </div>
-            <div className={styles.industryItem}>
-              <Building2 size={40} />
-              <span>Dental Practices</span>
-            </div>
-            <div className={styles.industryItem}>
-              <Wallet size={40} />
-              <span>Finance Companies</span>
-            </div>
-            <div className={styles.industryItem}>
-              <Store size={40} />
-              <span>Local Businesses</span>
-            </div>
-          </div>
+      {/* ============ TESTIMONIALS ============ */}
+      <TestimonialsSection />
+
+      {/* ============ CTA SECTION ============ */}
+      <section className="relative overflow-hidden py-20 lg:py-28">
+        <div className="absolute inset-0 bg-gradient-to-r from-aura-950 via-aura-900 to-slate-900 dark:from-black dark:via-aura-950 dark:to-black" />
+        <div className="absolute inset-0">
+          <div className="absolute top-1/2 left-0 -translate-y-1/2 w-72 h-72 bg-aura-500/10 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 right-0 -translate-y-1/2 w-72 h-72 bg-indigo-500/10 rounded-full blur-3xl" />
+        </div>
+
+        <div className="container-main relative z-10 text-center">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="max-w-2xl mx-auto"
+          >
+            <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 rounded-full border border-aura-400/20 bg-aura-400/10 px-4 py-1.5 mb-6">
+              <span className="flex h-2 w-2 rounded-full bg-indigo-400 animate-pulse" />
+              <span className="text-xs font-semibold uppercase tracking-wider text-aura-300">
+                Start Your Growth Journey
+              </span>
+            </motion.div>
+            <motion.h2 variants={fadeInUp} className="text-display-sm sm:text-display-md text-white font-bold mb-4">
+              Ready to Transform Your Business?
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="text-lg text-slate-300 mb-8 max-w-lg mx-auto">
+              Let&apos;s discuss how our AI-powered solutions can help you achieve your growth goals. Book a free consultation today.
+            </motion.p>
+            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-aura-500 to-indigo-500 px-8 py-4 text-base font-semibold text-white shadow-xl shadow-aura-500/30 hover:shadow-2xl hover:shadow-aura-500/40 hover:-translate-y-0.5 transition-all duration-300 group"
+              >
+                Book Free Consultation
+                <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+              <Link
+                href="/case-studies"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-800/50 px-8 py-4 text-base font-semibold text-slate-200 hover:bg-slate-800 hover:border-slate-600 hover:text-white transition-all duration-300"
+              >
+                View Case Studies
+              </Link>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className={styles.contact}>
-        <div className="container">
-          <div className={`glass-card ${styles.contactCard}`}>
-            <div className={styles.contactContent}>
-              <h2>Ready to Fix Your Growth?</h2>
-              <p>
-                If your business is not generating leads online, you are losing money daily. 
-                Let's build your growth engine today.
-              </p>
-              <div className={styles.contactActions}>
-                <a href="https://wa.me/yournumber" className={styles.whatsappBtn}>
-                  <MessageSquare size={20} /> Chat on WhatsApp
-                </a>
-                <a href="tel:+1234567890" className={styles.callBtn}>
-                  <Phone size={20} /> Call Now
-                </a>
-              </div>
-            </div>
-            <form className={styles.contactForm}>
-              <div className={styles.formGroup}>
-                <label>Name</label>
-                <input type="text" placeholder="Your Name" />
-              </div>
-              <div className={styles.formGroup}>
-                <label>Phone</label>
-                <input type="tel" placeholder="Your Phone Number" />
-              </div>
-              <div className={styles.formGroup}>
-                <label htmlFor="business-type">Business Type</label>
-                <select id="business-type">
-                  <option>Clinic / Medical</option>
-                  <option>Finance</option>
-                  <option>Salon / Bakery</option>
-                  <option>Other Service Business</option>
-                </select>
-              </div>
-              <button type="submit" className={styles.submitBtn}>
-                Get My Free Growth Strategy
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
+      {/* ============ FAQ ============ */}
+      <FAQSection />
+
+      {/* ============ NEWSLETTER ============ */}
+      <NewsletterSignup />
 
       <Footer />
     </main>
